@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using RemoteTest.Extensions;
 
 namespace RemoteTest
 {
@@ -13,11 +8,28 @@ namespace RemoteTest
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build()
+                .CreateDbIfNoneExists()
+                .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
+            CreateHostBuilder(args, null, null);
+        
+        public static IHostBuilder CreateHostBuilder(string[] args, string? url, string? root) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                    if (url != null)
+                    {
+                        webBuilder.UseUrls(url);
+                    }
+
+                    if (root != null)
+                    {
+                        webBuilder.UseWebRoot(root);
+                    }
+                });
     }
 }

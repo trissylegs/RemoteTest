@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteTest", "RemoteTest\RemoteTest.csproj", "{3326BF44-0655-47B3-B68D-469B938E7095}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteTest.AcceptanceTests", "RemoteTest.AcceptanceTests\RemoteTest.AcceptanceTests.csproj", "{99599637-C663-4B7D-9820-D48CCACBAECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3326BF44-0655-47B3-B68D-469B938E7095}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3326BF44-0655-47B3-B68D-469B938E7095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3326BF44-0655-47B3-B68D-469B938E7095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99599637-C663-4B7D-9820-D48CCACBAECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99599637-C663-4B7D-9820-D48CCACBAECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99599637-C663-4B7D-9820-D48CCACBAECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99599637-C663-4B7D-9820-D48CCACBAECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
